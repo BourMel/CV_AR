@@ -19,6 +19,20 @@ $(document).ready(function() {
         $(toShow).show();
     });
 
+    //réalisations
+    $("#realisations_section article").hide();
+    $("#audiovisuel").show();
+    $("a[href='#audiovisuel']").addClass("active");
+
+    $(".realisations_choice a").click(function(e) {
+        e.preventDefault();
+        $(this).siblings().removeClass("active");
+        $("#realisations_section article").hide();
+        $(this).addClass("active");
+        var toShow = $(this).attr("href");
+        $(toShow).show();
+    });
+
     //menu
     var menu = $(".website_menu");
     var hauteurMenu = menu.offset().top;
@@ -45,19 +59,5 @@ $(document).ready(function() {
 
     //initialisation zoombox
     $('a.zoombox').zoombox();
-
-    /*
-    var mn = $(".menu");
-    var mns = "nav-scroll";
-    var hdr = $('header').height();
-
-    $(window).scroll(function() {
-        if( $(this).scrollTop() > hdr ) {
-            mn.addClass(mns);
-        } else {
-            mn.removeClass(mns);
-        }
-    });*/
-    console.log(hauteurMenu);
 
 });
