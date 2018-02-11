@@ -10,6 +10,10 @@ html {
     font-family:"Open Sans";
 }
 
+body {
+    overflow-X: none;
+}
+
 .wrapper {
     width:1000px;
     margin:auto;
@@ -199,7 +203,14 @@ header {
 /*BAGAGE*/
 
 .bagage {
-    min-height:70vh;
+    min-height:80vh;
+    padding-bottom:3em;
+    position:relative;
+}
+
+.bagage_choice {
+    padding-bottom:5em;
+    position:relative;
 }
 
 .bagage_choice, .realisations_choice {
@@ -227,6 +238,42 @@ header {
 .bagage .item {
     width:270px;
     margin-bottom:5em;
+}
+
+/*barre décorative*/
+#etudes:after {
+    content:'';
+    display:block;
+    position:absolute;
+    top:23em;
+    right:0;
+    height:10px;
+    width:180vw;
+    background-color:#FFFFFF;
+    transform:rotate(-1deg);
+}
+
+/*puces*/
+.bagage #etudes .item::before {
+    content:"";
+    display:block;
+    background-color:#000000;
+    border:5px solid #FFFFFF;
+    border-radius:50%;
+    height:40px;
+    width:40px;
+    position:relative;
+    left:115px;
+    bottom:3.7em;
+    z-index:3;
+}
+
+.bagage #etudes .item:first-child::before {
+    bottom:3.3em;
+}
+
+.bagage #etudes .item:last-child::before {
+    bottom:4.5em;
 }
 
 /*REALISATIONS*/
@@ -350,4 +397,36 @@ input:focus ~ label, input:valid ~ label, textarea:valid ~ label, textarea:focus
 
 footer {
     text-align:center;
+    position:relative;
+    padding:2em;
+    font-weight:800;
+}
+
+footer span {
+    font-size:1.4em;
+}
+
+footer p {
+    margin:1em;
+    line-height:1.5;
+}
+
+.fa.footer {
+    border-bottom:none;
+    position:absolute;
+    top:0.5em;
+}
+
+.fa.footer.bottom {
+    top:2em;
+}
+
+.fa.footer.left {
+    float:none;
+    left:1em;
+}
+
+.fa.footer.right {
+    float:none;
+    right:1em;
 }

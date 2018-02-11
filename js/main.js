@@ -4,15 +4,18 @@ $(document).ready(function() {
     $("header").parallax("center", 0.5, 2, true);
     
     //compétences
-    $(".bagage article").hide();
+    var $articleComp = $(".bagage article");
+    var $etudesLink = $("a[href='#etudes']");
+
+    $articleComp.hide();
     $("#etudes").show();
-    $("a[href='#etudes']").addClass("active");
+    $etudesLink.addClass("active");
     
     $(".bagage_choice a").click(function(e) {
         e.preventDefault();
         //cache inactif
         $(this).siblings().removeClass("active");
-        $(".bagage article").hide();
+        $articleComp.hide();
         //ajoute actif
         $(this).addClass("active");
         var toShow = $(this).attr("href");
@@ -20,14 +23,16 @@ $(document).ready(function() {
     });
 
     //réalisations
-    $("#realisations_section article").hide();
+    var $articleRealisations = $("#realisations_section article");
+
+    $articleRealisations.hide();
     $("#audiovisuel").show();
     $("a[href='#audiovisuel']").addClass("active");
 
     $(".realisations_choice a").click(function(e) {
         e.preventDefault();
         $(this).siblings().removeClass("active");
-        $("#realisations_section article").hide();
+        $articleRealisations.hide();
         $(this).addClass("active");
         var toShow = $(this).attr("href");
         $(toShow).show();
