@@ -105,15 +105,9 @@ header {
     text-decoration:none;
 }
 
-.header_link .arrow {
-    display:inline-block;
-    background-color:#ffffff;
-    border-radius:50%;
-    height:40px;
-    line-height:40px;
-    width:40px;
-    color:#a9a9a9;
-    text-align:center;
+.header_link span {
+    font-size:1.7em;
+    border-bottom: none;
 }
 
 .header_link:hover {
@@ -205,7 +199,7 @@ header {
 .bagage {
     min-height:80vh;
     padding-bottom:3em;
-    position:relative;
+    /*position:relative;*/
 }
 
 .bagage_choice {
@@ -233,28 +227,31 @@ header {
 .bagage .row {
     display:flex;
     justify-content:space-around;
-}
-
-.bagage .item {
-    width:270px;
-    margin-bottom:5em;
+	/*positionnement barre décorative*/
+	position: relative;
+	margin-top:5em;
 }
 
 /*barre décorative*/
-#etudes:after {
+.bagage .row:before {
     content:'';
     display:block;
     position:absolute;
-    top:23em;
-    right:0;
+	bottom:14.5em;
+	left:-5em;
     height:10px;
     width:180vw;
     background-color:#FFFFFF;
     transform:rotate(-1deg);
 }
 
+.bagage .row .item {
+    width:270px;
+    margin-bottom:5em;
+}
+
 /*puces*/
-.bagage #etudes .item::before {
+.bagage .row .item::before {
     content:"";
     display:block;
     background-color:#000000;
@@ -268,11 +265,12 @@ header {
     z-index:3;
 }
 
-.bagage #etudes .item:first-child::before {
+/*décalage puce selon barre décorative*/
+.bagage .row .item:first-child::before {
     bottom:3.3em;
 }
 
-.bagage #etudes .item:last-child::before {
+.bagage .row .item:last-child::before {
     bottom:4.5em;
 }
 
@@ -327,6 +325,7 @@ header {
 .audiovisuel_link span {
     color:#cd201f;
     font-weight:800;
+    border-bottom: none;
 }
 
 #graphisme {
@@ -393,6 +392,22 @@ input:focus ~ label, input:valid ~ label, textarea:valid ~ label, textarea:focus
     color:#28574C;
 }
 
+/*icone envoi*/
+#contact button {
+    background-color: transparent;
+    border: none;
+    margin-top: 2em;
+    cursor: pointer;
+}
+
+#contact button span {
+    border-bottom: 0;
+}
+
+#contact button span::before {
+    color: #FFF;
+}
+
 /*FOOTER*/
 
 footer {
@@ -409,6 +424,30 @@ footer span {
 footer p {
     margin:1em;
     line-height:1.5;
+}
+
+footer p a {
+    color: #000;
+}
+
+#mentions {
+    display: none;
+}
+
+#mentions.active {
+    display: block;
+    position: absolute;
+    top:2em;
+    left: 65%;
+}
+
+#mentions h3 {
+    padding: 5px;
+}
+
+#mentions ul li {
+    font-size: 0.8em;
+    font-weight:600;
 }
 
 .fa.footer {

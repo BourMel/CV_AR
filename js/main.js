@@ -1,8 +1,8 @@
 $(document).ready(function() {
-   
+
     //parallaxe
     $("header").parallax("center", 0.5, 2, true);
-    
+
     //compétences
     var $articleComp = $(".bagage article");
     var $etudesLink = $("a[href='#etudes']");
@@ -10,7 +10,7 @@ $(document).ready(function() {
     $articleComp.hide();
     $("#etudes").show();
     $etudesLink.addClass("active");
-    
+
     $(".bagage_choice a").click(function(e) {
         e.preventDefault();
         //cache inactif
@@ -36,6 +36,12 @@ $(document).ready(function() {
         $(this).addClass("active");
         var toShow = $(this).attr("href");
         $(toShow).show();
+    });
+
+    //mentions
+    $("a[href='#mentions']").click(function(e) {
+        e.preventDefault();
+        $("#mentions").toggleClass("active");
     });
 
     //menu
